@@ -49,3 +49,6 @@ export const verification = sqliteTable("verification", {
   createdAt: integer("created_at", { mode: "timestamp" }),
   updatedAt: integer("updated_at", { mode: "timestamp" }),
 });
+
+export type User = typeof user.$inferSelect;
+export type Session = typeof session.$inferSelect;
