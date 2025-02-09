@@ -8,4 +8,7 @@ export default defineNuxtConfig({
   },
   srcDir: "app/",
   serverDir: "server/",
+  experimental: {
+    typedPages: true,
+  },
 });

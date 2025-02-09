@@ -1,6 +1,6 @@
 import { db } from "~~/server/db";
-import { users } from "~~/server/db/schema";
+import { user } from "~~/server/db/schemas/user";
 
 export default defineEventHandler(async (event) => {
-  return db.select().from(users).all();
+  return db.select().from(user).all();
 });
