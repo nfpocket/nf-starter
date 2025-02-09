@@ -2,6 +2,10 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## Drizzle
+
+This project uses [Drizzle](https://orm.drizzle.team/docs/kit-overview#how-to-migrate-to-0210) as the ORM for the database.
+
 ## Setup
 
 Make sure to install dependencies:
