@@ -25,3 +25,4 @@ logs
 
 # DB
 server/db/db.sqlite
+server/db/migrations
