@@ -9,6 +9,8 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "db:generate": "pnpm drizzle-kit generate",
+    "db:migrate": "pnpm drizzle-kit migrate",
+    "db:init": "pnpm run db:generate && pnpm run db:migrate",
     "db:push": "pnpm drizzle-kit push",
     "db:studio": "pnpm drizzle-kit studio"
   },

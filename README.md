@@ -21,10 +21,10 @@ Create your own .env:
 cp .env.example .env
 ```
 
-Generate your db:
+Init your db:
 
 ```bash
-pnpm run db:generate
+pnpm run db:init
 ```
 
 ## Development Server
