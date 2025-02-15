@@ -1,5 +1,5 @@
 <template>
-  <UCard class="max-w-sm">
+  <UCard>
     <template #header>
       <div>
         <h1 class="text-2xl">Sign in</h1>
@@ -23,14 +23,30 @@
           type="password"
         />
       </UFormGroup>
-
-      <UButton
-        :loading
-        :disabled="!isFormValid"
-        label="Sign in"
-        @click="handleSignIn"
-      />
     </div>
+
+    <template #footer>
+      <div class="flex items-center gap-2">
+        <UButton
+          :loading
+          :disabled="!isFormValid"
+          label="Sign in"
+          @click="handleSignIn"
+        />
+
+        <UDivider
+          orientation="vertical"
+          label="or"
+        />
+
+        <UButton
+          to="/auth/signup"
+          :loading
+          label="Sign up instead"
+          variant="outline"
+        />
+      </div>
+    </template>
   </UCard>
 </template>
 

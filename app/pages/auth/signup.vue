@@ -1,5 +1,5 @@
 <template>
-  <UCard class="max-w-sm">
+  <UCard>
     <template #header>
       <div>
         <h1 class="text-2xl">Sign up</h1>
@@ -8,18 +8,24 @@
     </template>
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-2">
-        <UFormGroup label="First name">
+        <UFormGroup
+          class="flex-1"
+          label="First name"
+        >
           <UInput
             :loading
             v-model="firstName"
-            placeholder="firstName"
+            placeholder="First name"
           />
         </UFormGroup>
-        <UFormGroup label="Last name">
+        <UFormGroup
+          class="flex-1"
+          label="Last name"
+        >
           <UInput
             :loading
             v-model="lastName"
-            placeholder="lastName"
+            placeholder="Last name"
           />
         </UFormGroup>
       </div>
@@ -49,14 +55,30 @@
           type="password"
         />
       </UFormGroup>
-
-      <UButton
-        :loading
-        :disabled="!isFormValid"
-        label="Sign up"
-        @click="handleSignUp"
-      />
     </div>
+
+    <template #footer>
+      <div class="flex items-center gap-2">
+        <UButton
+          :loading
+          :disabled="!isFormValid"
+          label="Sign up"
+          @click="handleSignUp"
+        />
+
+        <UDivider
+          orientation="vertical"
+          label="or"
+        />
+
+        <UButton
+          to="/auth/signin"
+          :loading
+          label="Sign in instead"
+          variant="outline"
+        />
+      </div>
+    </template>
   </UCard>
 </template>
 
@@ -73,7 +95,14 @@ const confirmPassword = ref<string>("");
 
 const passwordsMatch = computed(() => password.value === confirmPassword.value);
 const isFormValid = computed(() => {
-  return firstName.value && lastName.value && email.value && password.value && confirmPassword.value && passwordsMatch.value;
+  return (
+    firstName.value &&
+    lastName.value &&
+    email.value &&
+    password.value &&
+    confirmPassword.value &&
+    passwordsMatch.value
+  );
 });
 
 const handleSignUp = async () => {
