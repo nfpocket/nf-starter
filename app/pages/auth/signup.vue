@@ -123,6 +123,6 @@ const handleSignUp = async () => {
     return;
   }
 
-  navigateTo("/dashboard");
+  navigateTo("/todos");
 };
 </script>

@@ -79,6 +79,6 @@ const handleSignIn = async () => {
     return;
   }
 
-  navigateTo("/dashboard");
+  navigateTo("/todos");
 };
 </script>
