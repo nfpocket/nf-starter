@@ -12,7 +12,8 @@
     "db:migrate": "pnpm drizzle-kit migrate",
     "db:init": "pnpm run db:generate && pnpm run db:migrate",
     "db:push": "pnpm drizzle-kit push",
-    "db:studio": "pnpm drizzle-kit studio"
+    "db:studio": "pnpm drizzle-kit studio",
+    "typecheck": "pnpx nuxi typecheck"
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.2.2",

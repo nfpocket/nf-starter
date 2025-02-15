@@ -7,9 +7,14 @@ type AuthSession = {
   user: User;
 };
 
-type EventHandlerWithSession<T extends EventHandlerRequest, D> = (event: H3Event<T>, session: AuthSession) => Promise<D>;
+type EventHandlerWithSession<T extends EventHandlerRequest, D> = (
+  event: H3Event<T>,
+  session: AuthSession,
+) => Promise<D>;
 
-export const defineEventHandlerWithAuth = <T extends EventHandlerRequest, D>(handler: EventHandlerWithSession<T, D>) => {
+export const defineEventHandlerWithAuth = <T extends EventHandlerRequest, D>(
+  handler: EventHandlerWithSession<T, D>,
+) => {
   return defineEventHandler(async (event) => {
     const session = await auth.api.getSession({
       headers: event.headers,
