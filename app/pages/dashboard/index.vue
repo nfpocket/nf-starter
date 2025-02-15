@@ -20,5 +20,5 @@
 </template>
 
 <script setup lang="ts">
-const { data: users, status, error } = useFetch("/api/users/list");
+const { data: users, status, error } = useFetch("/api/users");
 </script>
